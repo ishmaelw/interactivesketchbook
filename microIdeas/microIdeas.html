@@ -63,4 +63,59 @@ Where friction appears: Punishment for stillness, forced micro-movements, consta
 Intended feeling:
 Anxiety and surveillance.</p3>
 </body>
+
+<section>
+  <h2>Micro-Project — Progress #1</h2>
+  <h3>Verify You’re Human</h3>
+
+  <h4>1. Concept Summary</h4>
+  <p>
+    This interaction simulates a system that forces certain users to complete a human verification task before accessing content. 
+    The user can click to attempt verification. A hidden system variable determines whether they are flagged for verification or allowed to pass instantly. 
+    Over time, repeated attempts increase suspicion, making it harder to exit the verification state.
+  </p>
+
+  <h4>2. Primary Variable</h4>
+  <p><strong>let flagged = false;</strong></p>
+
+  <p>
+    This variable determines whether the user is required to complete verification.
+    It changes at the start of the sketch using a hidden rule (random assignment simulating a “risk score”).
+    Visually and behaviorally, it controls whether the user immediately sees content (State 1) 
+    or is placed into a verification screen (State 2).
+  </p>
+
+  <h4>3. Base Build (Week 1 Implementation)</h4>
+  <p>
+    The first working version will include:
+  </p>
+  <ul>
+    <li>One variable: <strong>flagged</strong></li>
+    <li>One input: Mouse click</li>
+    <li>Two visible states</li>
+  </ul>
+
+  <p><strong>State 1: Access Granted</strong><br>
+  The screen displays “Access Granted.” No verification required.</p>
+
+  <p><strong>State 2: Verification Required</strong><br>
+  The screen displays “Please verify you are human.” 
+  Clicking attempts verification but does not guarantee exit.</p>
+
+  <h4>4. Structural Growth</h4>
+  <p>
+    Over the next three weeks, this system can expand by adding escalation and instability. 
+    A stage variable could track how many verification attempts have occurred and increase task difficulty over time. 
+    Time-based decay could re-trigger verification even after successful completion. 
+    Friction could be introduced by shrinking response windows or increasing ambiguity. 
+    The system could also introduce uneven reset behavior, where some users are pushed back into verification more frequently than others.
+  </p>
+
+ 
+  <p>
+    
+   
+  </p>
+
+</section>
 </html>
