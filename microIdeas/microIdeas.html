@@ -113,11 +113,19 @@ Anxiety and surveillance.</p3>
     Friction could be introduced by shrinking response windows or increasing ambiguity. 
     The system could also introduce uneven reset behavior, where some users are pushed back into verification more frequently than others.
   </p>
+<section>
+  <h5>Micro Project — Progress #2</h5>
 
- 
   <p>
-    
-   
+    The current build generates a randomized starting stage that determines whether the user must complete verification or is granted immediate access. If verification is required, a grid appears (either 3x3 or 4x4 depending on stage), and the user can click squares to select them. When all required squares are correctly selected, the system reduces the stage by one and generates a new grid until access is granted.
+  </p>
+
+</section>
+  <p>
+    The main variable is stage, which controls the user’s verification level and grid size. When the user interacts by clicking squares and successfully matching the hidden correct pattern, the stage decreases, changing the grid size or eventually removing the verification entirely.
+  </p>
+  <p>
+    Additional variables track user's behavior, such as time spent in each stage, to further refine the verification process.
   </p>
 
 </section>
