@@ -17,7 +17,7 @@ function setup() {
   createCanvas(500, 500);
   textAlign(CENTER, CENTER);
 
-  // hidden starting bias
+
   stage = floor(random(0,3));
 
   generatePixelBackground();
@@ -33,7 +33,7 @@ function draw() {
     return;
   }
 
-  // ACCESS GRANTED
+
   if (stage === 0) {
     background(40,200,80);
     fill(255);
@@ -42,7 +42,7 @@ function draw() {
     return;
   }
 
-  // ERROR SCREEN
+
   if (errorState) {
     background(30);
     fill(255,80,80);
