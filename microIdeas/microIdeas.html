@@ -9,63 +9,75 @@
 <body>
       <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js"></script>
     <script src="sketch.js"></script>
-    <h1>micro ideas</h1>
-<p1> 
-<h2></h2>“Premium Required”<h2></h2>
+   <h1>Micro Project Ideas</h1>
 
-Issue / behavior / system you want to align with:
-Digital paywalls and  systems that gate basic functionality behind payment.
+<section>
+  <h2>Premium Required</h2>
 
-Interaction rule (conceptual):
-The user can begin interacting freely at first, but once they reach a certain threshold of use, access becomes restricted. Actions that previously worked now trigger a “premium required” state. The restriction may appear arbitrary or timed rather than clearly rule-based.
+  <p><strong>Issue / behavior / system:</strong><br>
+  Digital paywalls and systems that gate basic functionality behind payment.</p>
 
-Input: Repeated clicks and scrolling attempts to unlock content.
+  <p><strong>Interaction rule:</strong><br>
+  The user can begin interacting freely at first, but once they reach a threshold of use, access becomes restricted. Actions that previously worked now trigger a “premium required” state. The restriction appears arbitrary rather than clearly rule-based.</p>
 
-What changes over time: The number of allowed actions decreases; locked elements increase; access shrinks.
+  <p><strong>Input:</strong><br>
+  Repeated clicks and scrolling attempts.</p>
 
-Where friction appears: limits scrolling or partial visibility of content.
+  <p><strong>What changes over time:</strong><br>
+  Allowed actions decrease; locked elements increase; access shrinks.</p>
 
-Intended feeling:
-Exclusion and frustration.
+  <p><strong>Where friction appears:</strong><br>
+  Limited scrolling, blocked actions, and partial visibility of content.</p>
 
-</p1>
+  <p><strong>Intended feeling:</strong><br>
+  Exclusion and frustration.</p>
+</section>
 
-<p2>
-    <h2> </h2>"Verify You’re Human” <h2></h2>
+<section>
+  <h2>Verify You’re Human</h2>
 
-Issue / behavior / system you want to align with:
-Automated systems that force people to repeatedly prove authentication in order to access basic digital space.
+  <p><strong>Issue / behavior / system:</strong><br>
+  Automated systems that force people to repeatedly prove authentication to access digital space.</p>
 
-Interaction rule (conceptual):
-The user must complete a verification task before proceeding. Each time they successfully complete it, a new verification appears. The criteria subtly change or become slightly more ambiguous over time, even though the task looks similar.
+  <p><strong>Interaction rule:</strong><br>
+  The user must complete a verification task before proceeding. Each time they succeed, a new verification appears. The criteria subtly change or become more ambiguous over time, even though the task appears similar.</p>
 
-Input: Clicking, selecting items, or completing small challenges.
+  <p><strong>Input:</strong><br>
+  Clicking, selecting, or completing small challenges.</p>
 
-What changes over time: The number of verifications increases; instructions become less clear; tolerance for “correct” responses shrinks.
+  <p><strong>What changes over time:</strong><br>
+  The number of verifications increases; instructions become less clear; tolerance for correctness shrinks.</p>
 
-Where friction appears: Repetition, unclear rules, near-success followed by failure, the sense of being evaluated by something invisible.
+  <p><strong>Where friction appears:</strong><br>
+  Repetition, unclear rules, near-success followed by failure, and invisible evaluation.</p>
 
-Intended feeling:
-Suspicion and humiliation.</p2>
+  <p><strong>Intended feeling:</strong><br>
+  Suspicion and humiliation.</p>
+</section>
 
-<p3>
-    <h3></h3>“Are You Still There?”<h3></h3>
+<section>
+  <h2>Are You Still There?</h2>
 
-Issue / behavior / system you want to align with:
-Attention-tracking systems that monitor inactivity and assume disengagement if you pause.
+  <p><strong>Issue / behavior / system:</strong><br>
+  Attention-tracking systems that monitor inactivity and assume disengagement.</p>
 
-Interaction rule (conceptual):
-The system constantly monitors user activity. If there is even a brief pause, it triggers a warning asking if the user is still present. Over time, the allowed inactivity window shrinks, requiring more frequent interaction to avoid being “timed out.”
+  <p><strong>Interaction rule:</strong><br>
+  The system constantly monitors user activity. If there is even a brief pause, it triggers a warning asking if the user is still present. Over time, the allowed inactivity window shrinks, requiring constant interaction.</p>
 
-Input: Mouse movement or key presses.
+  <p><strong>Input:</strong><br>
+  Mouse movement or key presses.</p>
 
-What changes over time: The tolerance for stillness decreases; warnings appear faster; timeouts become more aggressive.
+  <p><strong>What changes over time:</strong><br>
+  Tolerance for stillness decreases; warnings appear faster; timeouts become more aggressive.</p>
 
-Where friction appears: Punishment for stillness, forced micro-movements, constant monitoring.
+  <p><strong>Where friction appears:</strong><br>
+  Punishment for stillness, forced micro-movements, constant monitoring.</p>
 
-Intended feeling:
-Anxiety and surveillance.</p3>
-</body>
+  <p><strong>Intended feeling:</strong><br>
+  Anxiety and surveillance.</p>
+</section>
+
+<hr>
 
 <section>
   <h2>Micro-Project — Progress #1</h2>
@@ -73,85 +85,87 @@ Anxiety and surveillance.</p3>
 
   <h4>1. Concept Summary</h4>
   <p>
-    This interaction simulates a system that forces certain users to complete a human verification task before accessing content. 
-    The user can click to attempt verification. A hidden system variable determines whether they are flagged for verification or allowed to pass instantly. 
+    This interaction simulates a system that forces certain users to complete a human verification process before accessing content.
+    The user clicks to attempt verification, but the outcome is not fully determined by their action.
+    A hidden system variable assigns different levels of scrutiny.
     Over time, repeated attempts increase suspicion, making it harder to exit the verification state.
   </p>
 
   <h4>2. Primary Variable</h4>
-  <p><strong>let flagged = false;</strong></p>
+  <p><strong>let stage = 0;</strong></p>
 
   <p>
-    This variable determines whether the user is required to complete verification.
-    It changes at the start of the sketch using a hidden rule (random assignment simulating a “risk score”).
-    Visually and behaviorally, it controls whether the user immediately sees content (State 1) 
-    or is placed into a verification screen (State 2).
+    This variable represents how many verification steps remain before access is granted.
+    It changes based on system judgment, increasing with failure or inactivity and decreasing with successful attempts.
+    It controls whether the user remains in verification or reaches the final access state.
   </p>
 
-  <h4>3. Base Build (Week 1 Implementation)</h4>
+  <h4>3. Base Build</h4>
   <p>
-    The first working version will include:
+    The first version includes one variable (<strong>stage</strong>), one input (mouse click), and two visible states.
   </p>
-  <ul>
-    <li>One variable: <strong>flagged</strong></li>
-    <li>One input: Mouse click</li>
-    <li>Two visible states</li>
-  </ul>
 
   <p><strong>State 1: Access Granted</strong><br>
-  The screen displays “Access Granted.” No verification required.</p>
+  The screen displays “Access Granted.” No verification is required.</p>
 
   <p><strong>State 2: Verification Required</strong><br>
-  The screen displays “Please verify you are human.” 
-  Clicking attempts verification but does not guarantee exit.</p>
+  The screen displays a verification prompt. Clicking attempts verification, but success is not guaranteed.</p>
 
   <h4>4. Structural Growth</h4>
   <p>
-    Over the next three weeks, this system can expand by adding escalation and instability. 
-    A stage variable could track how many verification attempts have occurred and increase task difficulty over time. 
-    Time-based decay could re-trigger verification even after successful completion. 
-    Friction could be introduced by shrinking response windows or increasing ambiguity. 
-    The system could also introduce uneven reset behavior, where some users are pushed back into verification more frequently than others.
+    Over time, the system evolves by adding escalation and instability.
+    A stage variable tracks verification difficulty and increases scrutiny.
+    Time-based behavior introduces suspicion for inactivity.
+    Tolerance for correctness shrinks, and probabilistic failure introduces inconsistency.
+    The system becomes less predictable and more restrictive.
   </p>
+</section>
+
 <section>
-  <h5>Micro Project — Progress #2</h5>
-
+  <h3>Micro Project — Progress #2</h3>
   <p>
-    The current build generates a randomized starting stage that determines whether the user must complete verification or is granted immediate access. If verification is required, a grid appears (either 3x3 or 4x4 depending on stage), and the user can click squares to select them. When all required squares are correctly selected, the system reduces the stage by one and generates a new grid until access is granted.
+    The system introduces a randomized starting stage that determines whether the user must complete verification or is granted immediate access.
+    A grid-based verification appears, requiring users to select correct squares.
+    Successful attempts reduce the stage until access is granted.
   </p>
-
+  <p>
+    The stage variable controls difficulty by changing grid size and verification steps.
+    User interaction directly affects progression through the system.
+  </p>
 </section>
-  <p>
-    The main variable is stage, which controls the user’s verification level and grid size. When the user interacts by clicking squares and successfully matching the hidden correct pattern, the stage decreases, changing the grid size or eventually removing the verification entirely.
+
+<section>
+  <h3>Micro Project — Progress #3</h3>
+  <p><strong>Added:</strong></p>
+  <ul>
+    <li>Idle suspicion</li>
+    <li>Probabilistic failure</li>
+    <li>Shrinking tolerance</li>
+  </ul>
+
+  <p><strong>Reflection:</strong><br>
+    The system shifted away from user skill and toward algorithmic judgment, making outcomes feel unpredictable and harder to trust.
   </p>
-  <p>
-    Additional variables track user's behavior, such as time spent in each stage, to further refine the verification process.
-  </p>
-
-<h6> Week 7 Updates</h6>
-  <p>
-    Features included:
-
-Click to begin
-
-Hidden randomized starting stage
-
-Different grid sizes by stage
-
-Pixelated image background
-
-Selectable grid squares
-
-Shrinking tolerance
-
-Probabilistic failure
-
-Idle suspicion (stage increases if idle)
-
-Error screen
-
-Stage escalation and reduction
-
-This version is stable and expandable.
 </section>
+
+<section>
+  <h3>Micro Project — Progress #4</h3>
+
+  <p><strong>Current Version:</strong></p>
+
+  <p>
+    The grid system has been removed, leaving only a pixelated background.
+    Verification attempts are now opaque, with no visible criteria for success.
+    The user can only click and wait for a response, reinforcing uncertainty and lack of control.
+    The stage variable still controls difficulty and access, while the system maintains restriction and escalation.
+  </p>
+
+  <p>
+    Across versions, the system moved from a solvable task to an unclear and impossible process, shifting the focus from user ability to system control.
+  </p>
+</section>
+
+</body>
+</html>
+
 </html>
