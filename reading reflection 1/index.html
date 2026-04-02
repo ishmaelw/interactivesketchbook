@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Reading Reflection 1</h1>
+    <p>
+
+Reading Norman’s ideas about affordances, signifiers, feedback, mapping, and constraints made me realize that my micro-project is less about solving a task and more about how a system controls behavior. My project started as a CAPTCHA-style grid where users clicked boxes to gain access, but over time I removed the grid and left only a pixel background and a verification system that becomes stricter if the user is idle or makes the wrong move. The system now feels less like a puzzle and more like an authority deciding whether you are allowed to enter. Looking at it through Norman’s lens helped me see where my system communicates clearly and where it intentionally creates confusion.
+
+The real affordance of my system is clicking or pressing to attempt verification. That is the main action the user can perform. However, the signifiers are minimal. The screen shows a prompt telling the user to verify, but it does not explain how success is determined. If someone encountered my system cold, they would probably understand that they need to interact, but they would not understand why they succeed or fail. Some affordances are intentionally hidden. For example, the system increases suspicion if the user stays idle, but there is no visible timer showing this change. This makes the system feel unpredictable, which is part of the concept. Instead of guiding the user, the system keeps information from them.
+
+Feedback exists in several places in my project. When the user clicks, the system responds with messages like “verifying,” “access denied,” or “access granted.” There is also visual feedback when the background changes color, especially when it turns green after access is granted. This feedback is immediate and noticeable, which helps the user understand that the system has responded to their action. However, there are moments where feedback is not sufficient. For example, when suspicion increases because the user is idle, nothing visible happens right away. The system changes internally, but the user cannot see that change. I think Norman would criticize this because the system’s state is not clearly communicated. The user is affected by a rule they cannot observe.
+
+Mapping in my system is partially intuitive. Clicking leads to a response, which makes sense to most users. However, the relationship between input and outcome is not always predictable. Sometimes the user clicks and is denied access even though they followed the instructions. This confusion is intentional. The system is designed to show how automated systems can make decisions that feel unfair or unclear. The hesitation a user feels is part of the experience. It reflects real-world systems where people do not fully understand why they are accepted or rejected.
+
+Constraints in my system are mostly invisible. The user has limited control over the outcome because the system uses hidden rules to decide success. These constraints guide behavior by forcing the user to keep trying, but they can also create frustration. For example, the user cannot skip the verification process or see the exact requirements for success. This restriction reinforces the idea that access is controlled by the system rather than earned by the user.
+
+If Norman evaluated my project, I think he would identify the biggest design weakness as the lack of transparency. Many of the system’s rules are hidden, which makes it difficult for users to form a clear mental model of how the system works. From a usability perspective, this is a flaw because good design usually helps users understand cause and effect. In my case, the confusion is intentional, but it still reduces clarity.
+
+My biggest takeaway from the text is that interaction design is about shaping behavior, not just creating visuals or functions. At the beginning of the semester, we talked about how interaction design at a macro level changes human behavior. I can see that happening in my project. The system encourages persistence, attention, and sometimes frustration. It controls how long the user stays, how often they try, and how they react to failure. I liked the reading because it gave me language to describe what my system is doing. It helped me think more critically about how users encounter a system and how design decisions influence their actions.
+</p>
+
+</body>
+</html>
