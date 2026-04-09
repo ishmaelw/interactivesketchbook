@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interface Audit — Micro-Project Page</title>
+</head>
+<body>
+
+<h1>Interface Audit — Micro-Project Page</h1>
+<p><strong>Using Norman and Nielsen as Analytical Tools</strong></p>
+
+<p>
+This audit focuses on how my interface communicates structure, rules, and interaction.
+The goal is to see how it mediates the relationship
+between the user and the system. My micro-project centers on a verification system
+that escalates pressure over time, so the interface has to communicate changing states,
+restricted access, and interaction clearly. Right now, the system logic is strong,
+but the communication layer is still developing.
+</p>
+
+<hr>
+
+<section>
+    <h2>Visibility of System Status</h2>
+
+    <p>
+    The page partially communicates where the user is, but not consistently.
+    When the system begins, the user sees a prompt to verify, and after interaction,
+    they receive messages like “verifying,” “access denied,” or “access granted.”
+    These messages provide basic feedback and indicate that the system has responded.
+     The user is not always aware of what stage they are currently in,
+    especially as the system escalates suspicion or difficulty.
+    </p>
+
+    <p>
+    Its not fully clear what state the system is in at any given moment.
+    For example, the system increases pressure when the user is idle, but there is
+    no indicator showing that escalation is happening. The user might believe
+    nothing has changed, even though the internal rules have shifted.
+    </p>
+
+    <p>
+    Its obvious that clicking or pressing is interactive, because the system responds
+    immediately. However, the overall system status remains partially hidden.
+    </p>
+
+    <h3>Weakness</h3>
+    <p>
+    The interface does not clearly communicate state progression over time.
+    The user cannot easily tell whether they are in an early stage, a warning stage,
+    or a restricted stage.
+    </p>
+</section>
+
+<hr>
+
+<section>
+    <h2>Affordances &amp; Signifiers</h2>
+
+    <p>
+    The primary action available on this page is clicking or pressing to attempt verification.
+    That is the core affordance of the system. The signifier is the instruction text telling
+    the user to verify or interact. The changing messages after each attempt also signal
+    that interaction is expected.
+    </p>
+
+    <p>
+    However, some actions are unclear or hidden. The system tracks idle time as a variable,
+    but there is no visible signifier showing that inactivity affects the outcome. This
+    creates a situation where the system reacts to behavior the user does not realize
+    is being monitored.
+    </p>
+
+    <p>
+    Nothing appears clickable in a traditional sense, because the grid was removed and
+    replaced with a pixel background. This makes the interaction more abstract. The user
+    can interact anywhere, but the interface does not clearly show where interaction
+    should occur.
+    </p>
+
+    <h3>Precision</h3>
+    <ul>
+        <li><strong>Action available:</strong> Click or press to verify</li>
+        <li><strong>Signifier:</strong> Instruction text and system messages</li>
+        <li><strong>Unclear interaction:</strong> Idle time affecting suspicion</li>
+        <li><strong>Hidden affordance:</strong> Time itself is an input variable</li>
+    </ul>
+</section>
+
+<hr>
+
+<section>
+    <h2>Navigation &amp; Mapping</h2>
+
+    <p>
+    Navigation on this page is minimal because the interaction is contained within a single
+    screen. The user does not move between pages but instead moves between system states.
+    The layout reflects the system structure in a simple way:
+    </p>
+
+    <ul>
+        <li>Instruction at the top</li>
+        <li>Interaction area in the center</li>
+        <li>Feedback messages appearing during interaction</li>
+    </ul>
+
+    <p>
+    Hierarchy is somewhat clear, but not strongly reinforced. The user can identify the
+    main instruction, but secondary information about system behavior is not visible.
+    The mapping between input and outcome is partially predictable. Clicking leads to a
+    response, but the result is not always consistent.
+    </p>
+
+    <p>
+    A user might hesitate because they are unsure how success is determined. They may also
+    hesitate after repeated failures, wondering whether they are doing something wrong
+    or whether the system has changed.
+    </p>
+
+    <h3>Hesitation Point</h3>
+    <p>After multiple failed attempts, the user may not know whether to:</p>
+    <ul>
+        <li>Keep trying</li>
+        <li>Wait</li>
+        <li>Refresh the page</li>
+    </ul>
+</section>
+
+<hr>
+
+<section>
+    <h2>Constraints &amp; Assumptions</h2>
+
+    <p>
+    The page assumes the user understands that verification requires repeated attempts.
+    It also assumes the user will recognize that time and persistence affect the system,
+    even though these rules are not explicitly stated.
+    </p>
+
+    <p>Several constraints exist in the system. The user:</p>
+    <ul>
+        <li>Cannot bypass the verification process</li>
+        <li>Cannot see the exact requirements for success</li>
+        <li>Cannot reset the system state manually</li>
+    </ul>
+
+    <p>
+    These restrictions limit user control and reinforce the system’s authority.
+    </p>
+
+    <p>Hidden elements include:</p>
+    <ul>
+        <li>The suspicion variable</li>
+        <li>Escalation thresholds</li>
+    </ul>
+
+    <h3>Identified Assumption</h3>
+    <p>
+    The interface assumes the user understands that the system is dynamic and changing
+    over time, even though that change is not clearly communicated.
+    </p>
+</section>
+
+<hr>
+
+<section>
+    <h2>Heuristic Violations</h2>
+
+    <h3>1. Visibility of System Status</h3>
+
+    <p><strong>Violation:</strong> The system changes internally without clearly communicating those changes to the user.</p>
+
+    <p><strong>Where it occurs:</strong> When suspicion increases during idle time or after repeated failures, there is no persistent indicator showing the escalation.</p>
+
+    <p><strong>Why it matters:</strong> Users cannot build a reliable mental model of the system if they do not know what state it is in.</p>
+
+    <p><strong>Structural Fix:</strong> Add a persistent stage or status indicator that updates as the system escalates, such as displaying the current verification level or system condition.</p>
+
+    <h3>2. Match Between System and the Real World</h3>
+
+    <p><strong>Violation:</strong> User actions do not consistently lead to predictable outcomes.</p>
+
+    <p><strong>Where it occurs:</strong> During verification attempts, the system may deny access even when the user follows instructions.</p>
+
+    <p><strong>Why it matters:</strong> This breaks the expected cause-and-effect relationship between action and result, making the system feel unreliable.</p>
+
+    <p><strong>Structural Fix:</strong> Provide a clear explanation or rule cue that indicates why failure occurs, such as a message showing increased restriction or system sensitivity.</p>
+</section>
+
+<hr>
+
+<section>
+    <h2>Structural Revision Proposal</h2>
+
+    <h3>1. Strengthen Hierarchy</h3>
+    <p>
+    Introduce a persistent system status region that clearly separates instruction,
+    interaction, and feedback. This would help users quickly understand the structure
+    of the page and recognize the system’s current condition.
+    </p>
+
+    <h3>2. Clarify Navigation Through State Indicators</h3>
+    <p>Add a visible progression marker that shows movement between states, such as:</p>
+    <ul>
+        <li>Initial verification</li>
+        <li>Warning</li>
+        <li>Restriction</li>
+        <li>Access granted</li>
+    </ul>
+
+    <h3>3. Improve Interaction Clarity</h3>
+    <p>
+    Explicitly signal that inactivity affects the system. This could be done by displaying
+    a countdown, timer, or warning message that appears before escalation occurs.
+    This change would make hidden variables visible and reduce user confusion.
+    </p>
+</section>
+
+<hr>
+
+<section>
+    <h2>Bottom Line</h2>
+    <p>
+    My system logic is intentional and structured, but the interface still hides too much
+    information from the user. The next phase of development should focus on making system
+    states, rules, and consequences more legible so users can understand how their behavior
+    connects to the system’s response.
+    </p>
+</section>
+
+</body>
+</html>
